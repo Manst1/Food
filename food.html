@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary - Language Learning App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom pattern for the right side */
+        .pattern-container {
+            position: relative;
+        }
+        .pattern-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png');
+            background-repeat: repeat-y;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 flex flex-col pattern-container">
+        <header class="bg-blue-600 text-white p-4 shadow-lg">
+            <h1 class="text-3xl font-bold text-center">Food</h1>
+        </header>
+        <main class="container mx-auto p-6 content">
+            
+            <div class="grid grid-cols-1 gap-12 max-w-lg mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
+                    <img src="https://i.imgur.com/z4Yxbj6.png" alt="Word 1" class="w-20 h-20 object-cover rounded">
+                    <div class="flex-1 flex flex-col items-end">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-1"></h2>
+                        <a href="https://manst1.github.io/Fruit/fruit.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Fruit</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
+                    <img src="https://i.imgur.com/0DqJBel.png" alt="Word 2" class="w-20 h-20 object-cover rounded">
+                    <div class="flex-1 flex flex-col items-end">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-1"></h2>
+                        <a href="https://manst1.github.io/Vegetables/vegetables.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Vegetables</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
+                    <img src="https://i.imgur.com/HpLHa3l.png" alt="Word 3" class="w-20 h-20 object-cover rounded">
+                    <div class="flex-1 flex flex-col items-end">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-1"></h2>
+                        <a href="https://manst1.github.io/Sweets/sweets.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Sweets</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
+                    <img src="https://i.imgur.com/1uC55OB.png" alt="Word 4" class="w-20 h-20 object-cover rounded">
+                    <div class="flex-1 flex flex-col items-end">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-1"></h2>
+                        <a href="https://manst1.github.io/Dairy/dairy.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Dairy</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
+                    <img src="https://i.imgur.com/UjbsyvB.png" alt="Word 5" class="w-20 h-20 object-cover rounded">
+                    <div class="flex-1 flex flex-col items-end">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-1"></h2>
+                        <a href="https://manst1.github.io/Otherfood/otherfood.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Other</a>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <script>
+        // Basic error logging to help diagnose issues
+        window.onload = function() {
+            console.log("Page loaded successfully");
+            if (!document.querySelector('.grid')) {
+                console.error("Grid container not found - check HTML structure");
+            }
+        };
+    </script>
+</body>
+</html>
