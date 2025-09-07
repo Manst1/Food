@@ -6,49 +6,35 @@
     <title>Food</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Dark mode styles */
-        body.dark .min-h-screen {
-            background-color: #1a202c;
-            background-image: none;
+        /* Custom pattern for the right side */
+        .pattern-container {
+            position: relative;
         }
-        body.dark .bg-blue-600 {
-            background-color: #2b6cb0;
+        .pattern-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png');
+            background-repeat: repeat-y;
+            opacity: 0.3;
+            z-index: 0;
         }
-        body.dark .text-white {
-            color: #e2e8f0;
-        }
-        body.dark .bg-gray-100 {
-            background-color: #2d3748;
-        }
-        body.dark .bg-white {
-            background-color: #2d3748;
-        }
-        body.dark .shadow-md {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        body.dark .text-gray-800 {
-            color: #e2e8f0;
-        }
-        
-        /* Make the toggle non-selectable */
-        .no-select {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
+        .content {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <div class="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 flex flex-col">
-        <header class="bg-blue-600 text-white p-4 shadow-lg flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-center w-full">Food - Comeris</h1>
-            <!-- Moved the toggle further to the left and made it non-selectable -->
-            <div id="dark-mode-toggle" class="no-select absolute right-16 top-4 cursor-pointer text-white text-lg p-2 rounded-full hover:bg-blue-700 transition-colors duration-300">
-                ☀️
-            </div>
+    <div class="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 flex flex-col pattern-container">
+        <header class="bg-blue-600 text-white p-4 shadow-lg">
+            <h1 class="text-3xl font-bold text-center">Food - Comeris</h1>
         </header>
-        <main class="container mx-auto p-6">
+        <main class="container mx-auto p-6 content">
+            
             <div class="grid grid-cols-1 gap-12 max-w-lg mx-auto">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 min-h-[120px] flex items-center p-5">
                     <img src="https://i.imgur.com/z4Yxbj6.png" alt="Word 1" class="w-20 h-20 object-cover rounded">
@@ -85,32 +71,11 @@
                         <a href="https://manst1.github.io/Otherfood/otherfood.html" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded text-base hover:bg-blue-600 transition">Other</a>
                     </div>
                 </div>
+                
             </div>
         </main>
     </div>
     <script>
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-
-        // Check for saved dark mode preference in local storage on page load
-        const currentMode = localStorage.getItem('theme');
-        if (currentMode === 'dark') {
-            body.classList.add('dark');
-            toggleButton.textContent = '🌙';
-        }
-
-        // Add event listener to the toggle button
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            if (body.classList.contains('dark')) {
-                toggleButton.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                toggleButton.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
         // Basic error logging to help diagnose issues
         window.onload = function() {
             console.log("Page loaded successfully");
